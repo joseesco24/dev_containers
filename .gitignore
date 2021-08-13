@@ -4,5 +4,9 @@ __pycache__
 # nodejs modules.
 node_modules
 
-# nodejs unnecessary files
+# nodejs unnecessary files.
 package-lock.json
+
+# go directories.
+bin 
+pkg

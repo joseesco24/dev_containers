@@ -26,12 +26,16 @@ ENV PATH="/home/$USERNAME/.local/bin:$PATH"
 
 # Changing the premises of the file system.
 
-RUN chown -R $USERNAME $WORKDIR_ROOT
+RUN chown -R $USERNAME $WORKDIR_ROOT $WORKDIR
 
 RUN find "$WORKDIR_ROOT/" -type d -exec chmod 755 {} \;
 RUN find "$WORKDIR_ROOT/" -type f -exec chmod 755 {} \;
 
+RUN find "$WORKDIR/" -type d -exec chmod 755 {} \;
+RUN find "$WORKDIR/" -type f -exec chmod 755 {} \;
+
 RUN chmod 755 $WORKDIR_ROOT
+RUN chmod 755 $WORKDIR
 
 # Establishing the default user and the default work directory.
 

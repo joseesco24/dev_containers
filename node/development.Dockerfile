@@ -31,7 +31,7 @@ RUN mkdir -p $WORKDIR
 
 COPY ["package.json", "$WORKDIR"]
 
-# Adding to the container path the Python dependencies directory.
+# Adding to the container path the Node dependencies directory.
 
 ENV PATH="/usr/local/nodejs/bin:$PATH"
 

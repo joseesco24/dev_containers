@@ -1,8 +1,10 @@
 {
-  "name": "Existing Dockerfile",
+  "name": "golang dev container",
   "context": "../src",
   "dockerFile": "../development.Dockerfile",
   "forwardPorts": [],
+  "workspaceMount": "source=${localWorkspaceFolder},target=/home/golang_dev/workspace,type=bind,consistency=delegated",
+  "workspaceFolder": "/home/golang_dev/workspace",
   "extensions": [
     "golang.go",
   ]

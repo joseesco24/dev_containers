@@ -1,29 +1,49 @@
+# Declaration of the Golang version.
+
 FROM golang:1.17rc2
 
-ARG USERNAME=development
-ARG WORKDIR=/workspaces/golang_tests
+# Declaration of the project file system and username inside the development container.
 
-RUN useradd -ms /bin/bash $USERNAME
+ARG WORKDIR=/home/golang_dev/workspace
+ARG WORKDIR_ROOT=/home/golang_dev
+ARG USERNAME=golang_dev
+
+# Declaration of Golang environment variables.
+
+ENV GOROOT=/usr/local/go
+ENV GOBIN=$WORKDIR/bin
+ENV GOPATH=$WORKDIR
+
+# Creating the user on bash and their home directory.
+
+RUN useradd --create-home --shell /bin/bash $USERNAME
+
+# Creating the directories for the file system an go modules.
+
+RUN mkdir -p $WORKDIR/bin
+RUN mkdir -p $WORKDIR/pkg
+RUN mkdir -p $WORKDIR/src
 
 RUN mkdir -p $WORKDIR
 
-RUN mkdir -p $WORKDIR/go/bin
-RUN mkdir -p $WORKDIR/go/pkg
-RUN mkdir -p $WORKDIR/go/src
+# Adding to the container path the Golang dependencies directory.
 
-COPY [".","$WORKDIR"]
+ENV PATH="$GOROOT/bin:$GOBIN:$PATH"
+
+# Changing the premises of the file system.
+
+RUN chown -R $USERNAME $WORKDIR_ROOT $WORKDIR
+
+RUN find "$WORKDIR_ROOT/" -type d -exec chmod 755 {} \;
+RUN find "$WORKDIR_ROOT/" -type f -exec chmod 755 {} \;
 
 RUN find "$WORKDIR/" -type d -exec chmod 755 {} \;
 RUN find "$WORKDIR/" -type f -exec chmod 755 {} \;
 
-ENV GOPATH="$WORKDIR/go"
-ENV GOBIN="$GOPATH/bin"
-ENV GOROOT="/usr/local/go"
-
-ENV PATH="$PATH:$GOBIN:$GOROOT/bin"
-
-RUN chown -R $USERNAME $WORKDIR
+RUN chmod 755 $WORKDIR_ROOT
 RUN chmod 755 $WORKDIR
+
+# Establishing the default user and the default work directory.
 
 WORKDIR $WORKDIR
 USER $USERNAME
