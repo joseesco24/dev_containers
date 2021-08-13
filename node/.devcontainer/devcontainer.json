@@ -1,0 +1,15 @@
+{
+  "name": "Existing Dockerfile",
+  "context": "../src",
+  "dockerFile": "../development.Dockerfile",
+  "forwardPorts": [],
+  "extensions": [
+    "coenraads.bracket-pair-colorizer-2",
+    "mgmcdermott.vscode-language-babel",
+    "aaron-bond.better-comments",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "eg2.vscode-npm-script",
+    "hookyqr.beautify"
+  ]
+}

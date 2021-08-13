@@ -1,0 +1,18 @@
+{
+  "name": "python dev container",
+  "context": "..",
+  "dockerFile": "../development.Dockerfile",
+  "forwardPorts": [],
+  "workspaceMount": "source=${localWorkspaceFolder},target=/home/python_dev/workspace,type=bind,consistency=delegated",
+  "workspaceFolder": "/home/python_dev/workspace",
+  "extensions": [
+    "coenraads.bracket-pair-colorizer-2",
+    "aaron-bond.better-comments",
+    "ms-python.vscode-pylance",
+    "njpwerner.autodocstring",
+    "oderwat.indent-rainbow",
+    "esbenp.prettier-vscode",
+    "ms-toolsai.jupyter",
+    "ms-python.python"
+  ]
+}
