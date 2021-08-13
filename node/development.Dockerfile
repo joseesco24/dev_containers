@@ -22,8 +22,9 @@ RUN userdel node
 
 RUN useradd --create-home --shell /bin/bash $USERNAME
 
-# Creating the directories for the file system.
+# Creating the directories for the file system an node modules.
 
+RUN mkdir -p $WORKDIR/node_modules
 RUN mkdir -p $WORKDIR
 
 # Copying the dependencies files to the container.
