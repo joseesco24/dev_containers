@@ -2,7 +2,7 @@
 
 FROM python:3.7.10
 
-# Declaration of the project file system inside the development container.
+# Declaration of the project file system and username inside the development container.
 
 ARG WORKDIR=/home/python_dev/workspace
 ARG WORKDIR_ROOT=/home/python_dev
