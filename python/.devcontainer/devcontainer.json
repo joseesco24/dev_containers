@@ -12,7 +12,12 @@
     "njpwerner.autodocstring",
     "oderwat.indent-rainbow",
     "esbenp.prettier-vscode",
+    "alefragnani.bookmarks",
+    "mhutchie.git-graph",
+    "redhat.vscode-yaml",
     "ms-toolsai.jupyter",
-    "ms-python.python"
+    "ryu1kn.text-marker",
+    "ms-python.python",
+    "eamodio.gitlens",
   ]
 }

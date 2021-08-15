@@ -6,6 +6,13 @@
   "workspaceMount": "source=${localWorkspaceFolder},target=/home/golang_dev/workspace,type=bind,consistency=delegated",
   "workspaceFolder": "/home/golang_dev/workspace",
   "extensions": [
+    "coenraads.bracket-pair-colorizer-2",
+    "aaron-bond.better-comments",
+    "alefragnani.bookmarks",
+    "mhutchie.git-graph",
+    "redhat.vscode-yaml",
+    "ryu1kn.text-marker",
+    "eamodio.gitlens",
     "golang.go",
   ]
 }

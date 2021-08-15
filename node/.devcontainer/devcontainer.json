@@ -12,6 +12,11 @@
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
     "eg2.vscode-npm-script",
-    "hookyqr.beautify"
+    "alefragnani.bookmarks",
+    "mhutchie.git-graph",
+    "redhat.vscode-yaml",
+    "ryu1kn.text-marker",
+    "hookyqr.beautify",
+    "eamodio.gitlens"
   ]
 }
