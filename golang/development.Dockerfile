@@ -28,10 +28,6 @@ RUN useradd --create-home --shell /bin/bash $USERNAME
 
 # Creating the directories for the file system an go modules.
 
-RUN mkdir -p $WORKDIR/bin
-RUN mkdir -p $WORKDIR/pkg
-RUN mkdir -p $WORKDIR/src
-
 RUN mkdir -p $WORKDIR
 
 # Adding to the container path the Golang dependencies directory.

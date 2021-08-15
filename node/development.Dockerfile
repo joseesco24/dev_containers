@@ -32,12 +32,7 @@ RUN useradd --create-home --shell /bin/bash $USERNAME
 
 # Creating the directories for the file system an node modules.
 
-RUN mkdir -p $WORKDIR/node_modules
 RUN mkdir -p $WORKDIR
-
-# Copying the dependencies files to the container.
-
-COPY ["package.json", "$WORKDIR"]
 
 # Adding to the container path the Node dependencies directory.
 
@@ -60,12 +55,3 @@ RUN chmod 755 $WORKDIR
 
 WORKDIR $WORKDIR
 USER $USERNAME
-
-# Installing the dependencies inside the container.
-
-RUN npm install -g npm@latest
-RUN npm install --production=false
-
-# Removing the dependencies files from the container.
-
-RUN rm -r package.json

@@ -5,6 +5,7 @@
   "forwardPorts": [],
   "workspaceMount": "source=${localWorkspaceFolder},target=/home/python_dev/workspace,type=bind,consistency=delegated",
   "workspaceFolder": "/home/python_dev/workspace",
+  "postCreateCommand": "pip install --upgrade pip && pip install -r /home/python_dev/workspace/requirements/commons.txt -r /home/python_dev/workspace/requirements/development.txt",
   "extensions": [
     "coenraads.bracket-pair-colorizer-2",
     "aaron-bond.better-comments",

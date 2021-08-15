@@ -24,10 +24,6 @@ RUN useradd --create-home --shell /bin/bash $USERNAME
 
 RUN mkdir -p $WORKDIR
 
-# Copying the dependencies files to the container.
-
-COPY ["requirements/commons.txt","requirements/development.txt","$WORKDIR/"]
-
 # Adding to the container path the Python dependencies directory.
 
 ENV PATH="/home/$USERNAME/.local/bin:$PATH"
@@ -49,13 +45,3 @@ RUN chmod 755 $WORKDIR
 
 WORKDIR $WORKDIR
 USER $USERNAME
-
-# Installing the dependencies inside the container.
-
-RUN pip install --upgrade pip
-RUN pip install -r commons.txt -r development.txt
-
-# Removing the dependencies files from the container.
-
-RUN rm -r development.txt
-RUN rm -r commons.txt

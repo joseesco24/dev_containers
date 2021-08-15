@@ -5,6 +5,7 @@
   "forwardPorts": [],
   "workspaceMount": "source=${localWorkspaceFolder},target=/home/golang_dev/workspace,type=bind,consistency=delegated",
   "workspaceFolder": "/home/golang_dev/workspace",
+  "postCreateCommand": "mkdir -p /home/golang_dev/workspace/bin && mkdir -p /home/golang_dev/workspace/pkg",
   "extensions": [
     "coenraads.bracket-pair-colorizer-2",
     "aaron-bond.better-comments",
