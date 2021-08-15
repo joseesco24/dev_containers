@@ -2,6 +2,14 @@
 
 FROM python:3.7.10
 
+# Declarating the git user mail, installing tree and openssh-client.
+
+RUN git config --global user.email "josed.escobar@outlook.com"
+
+RUN apt-get update -y && apt-get upgrade -y
+RUN apt-get install -y openssh-client
+RUN apt-get install -y tree
+
 # Declaration of the project file system and username inside the development container.
 
 ARG WORKDIR=/home/python_dev/workspace

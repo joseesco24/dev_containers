@@ -2,6 +2,14 @@
 
 FROM node:16.6.1
 
+# Declarating the git user mail, installing tree and openssh-client.
+
+RUN git config --global user.email "josed.escobar@outlook.com"
+
+RUN apt-get update -y && apt-get upgrade -y
+RUN apt-get install -y openssh-client
+RUN apt-get install -y tree
+
 # Declaration of the node npm directories that need to be available to be edited.
 
 ARG NPM_PATH_1=/usr/local/lib/node_modules
