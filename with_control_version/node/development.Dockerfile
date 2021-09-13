@@ -5,6 +5,7 @@ FROM node:16.6.1
 # Declarating the git user mail, installing tree and openssh-client.
 
 RUN git config --global user.email "josed.escobar@outlook.com"
+RUN git config --global user.name "Jose Escobar"
 
 RUN apt-get update -y && apt-get upgrade -y
 RUN apt-get install -y openssh-client

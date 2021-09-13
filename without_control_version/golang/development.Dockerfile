@@ -2,9 +2,7 @@
 
 FROM golang:1.17rc2
 
-# Declarating the git user mail, installing tree and openssh-client.
-
-RUN git config --global user.email "josed.escobar@outlook.com"
+# Installing tree and openssh-client.
 
 RUN apt-get update -y && apt-get upgrade -y
 RUN apt-get install -y openssh-client
