@@ -21,7 +21,6 @@ ARG USERNAME=golang_dev
 
 ENV GOROOT=/usr/local/go
 ENV GOBIN=$WORKDIR/bin
-ENV GOPATH=$WORKDIR
 
 # Creating the user on bash and their home directory.
 
